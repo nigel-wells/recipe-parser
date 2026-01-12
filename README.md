@@ -16,7 +16,7 @@ A Next.js application that parses recipes from URLs, converts measurements to me
 
 ### Prerequisites
 
-- Node.js 20 or later
+- **Node.js 20.9.0 or later** (currently using v20.19.6)
 - npm or yarn
 - Anthropic API key (get one at https://console.anthropic.com/)
 
@@ -111,6 +111,40 @@ recipe-parser/
 - **Styling**: Tailwind CSS
 - **Parsing**: Cheerio, Claude API
 - **Validation**: Zod
+
+## Deployment
+
+### Environment Variables
+
+The app uses environment variables for configuration. **Never commit `.env.local` or any file containing your API key to git.**
+
+#### Required Environment Variables:
+- `ANTHROPIC_API_KEY` - Your Anthropic API key
+
+#### Local Development:
+1. Copy `.env.local.example` to `.env.local`
+2. Add your API key to `.env.local`
+3. The `.gitignore` file ensures this won't be committed
+
+#### Production Deployment:
+
+**Vercel:**
+1. Go to your project settings → Environment Variables
+2. Add `ANTHROPIC_API_KEY` with your API key value
+3. Deploy normally - Vercel will inject the variable at build time
+
+**Netlify:**
+1. Go to Site settings → Environment variables
+2. Add `ANTHROPIC_API_KEY` with your API key value
+3. Deploy normally
+
+**Docker:**
+```bash
+docker run -e ANTHROPIC_API_KEY=your_key_here your-image
+```
+
+**Other Platforms:**
+Most hosting platforms support environment variables through their dashboard or CLI. Set `ANTHROPIC_API_KEY` before deployment.
 
 ## Cost
 
