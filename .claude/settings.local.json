@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(if [ -f package.json ])",
+      "Bash(then cat package.json)",
+      "Bash(else echo \"No package.json found\")",
+      "Bash(fi:*)",
+      "WebSearch",
+      "Bash(npx create-next-app@latest:*)",
+      "Bash(node --version:*)",
+      "Bash(npm --version:*)",
+      "Bash(nvm list:*)",
+      "Bash(export PATH:*)",
+      "Bash(export NVM_DIR=\"$HOME/.nvm\")",
+      "Bash([ -s \"$NVM_DIR/nvm.sh\" ])",
+      "Bash(. \"$NVM_DIR/nvm.sh\")",
+      "Bash(nvm install:*)",
+      "Bash(nvm use:*)",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(npx tailwindcss:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(curl:*)"
+    ]
+  }
+}
